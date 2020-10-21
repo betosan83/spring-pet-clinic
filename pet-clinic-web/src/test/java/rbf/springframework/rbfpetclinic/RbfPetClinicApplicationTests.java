@@ -1,4 +1,4 @@
-package rbfpetclinic;
+package rbf.springframework.rbfpetclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
