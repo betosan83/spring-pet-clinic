@@ -6,6 +6,15 @@ public class Pet {
     private PetType petType;
     private Owner owner;
     private LocalDate birthDate;
+    private String race;
+
+    public String getRace() {
+        return race;
+    }
+
+    public void setRace(String race) {
+        this.race = race;
+    }
 
     public PetType getPetType() {
         return petType;
