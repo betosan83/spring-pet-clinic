@@ -1,10 +1,12 @@
 package rbf.springframework.rbfpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import rbf.springframework.rbfpetclinic.model.Pet;
 import rbf.springframework.rbfpetclinic.services.PetService;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {

@@ -1,10 +1,12 @@
 package rbf.springframework.rbfpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import rbf.springframework.rbfpetclinic.model.Owner;
 import rbf.springframework.rbfpetclinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends  AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
