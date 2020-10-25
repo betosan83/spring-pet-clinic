@@ -1,8 +1,10 @@
 package rbf.springframework.rbfpetclinic.services.map;
 
+import rbf.springframework.rbfpetclinic.model.BaseEntity;
+
 import java.util.*;
 
-public abstract class AbstractMapService<T, ID> {
+public abstract class AbstractMapService<T extends BaseEntity, ID> {
     protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll(){
@@ -13,8 +15,15 @@ public abstract class AbstractMapService<T, ID> {
         return map.get(id);
     }
 
-    T save(Long id, T object){
-        map.put(id, object);
+    T save(T object){
+        if(object != null) {
+            if (object.getId() == null) {
+                object.setId(getNextId());
+            }
+            map.put(object.getId(), object);
+        } else {
+            throw new RuntimeException("Object cannot be null");
+        }
         return object;
     }
 
